@@ -15,4 +15,14 @@ public class StringCalculatorTest {
     public void testEmptyStringReturnsZero() {
         Assertions.assertEquals(0, calculator.add(""));
     }
+
+    @Test
+    public void testSingleNumberReturnsNumberItself() {
+        Assertions.assertEquals(1, calculator.add("1"));
+    }
+
+    @Test
+    public void testTwoNumbersSeparatedByComma() {
+        Assertions.assertEquals(3, calculator.add("1,2"));
+    }
 }
