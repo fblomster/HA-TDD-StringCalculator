@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class StringCalculatorTest {
@@ -16,36 +16,48 @@ public class StringCalculatorTest {
 
     @Test
     public void testEmptyStringReturnsZero() {
-        Assertions.assertEquals(0, calculator.add(""));
+        assertEquals(0, calculator.add(""));
     }
 
     @Test
     public void testSingleNumberReturnsItself() {
-        Assertions.assertEquals(1, calculator.add("1"));
+        assertEquals(1, calculator.add("1"));
     }
 
     @Test
     public void testTwoNumbersSeparatedByComma() {
-        Assertions.assertEquals(3, calculator.add("1,2"));
+        assertEquals(3, calculator.add("1,2"));
     }
 
     @Test
     public void testMultipleNumbers() {
-        Assertions.assertEquals(10, calculator.add("1,2,2,5"));
+        assertEquals(10, calculator.add("1,2,2,5"));
     }
 
     @Test
     public void testMultipleNumbersSeparatedByCommaOrNewLine() {
-        Assertions.assertEquals(6, calculator.add("1\n2,3"));
+        assertEquals(6, calculator.add("1\n2,3"));
     }
 
     @Test
     public void testCustomDelimiter() {
-        Assertions.assertEquals(3, calculator.add("//;\n1;2"));
+        assertEquals(3, calculator.add("//;\n1;2"));
+    }
+
+    //@Test
+    //public void testExceptionOnNegatives() {
+     //       calculator.add("-1,-2,-3");
+    //}
+
+    @Test
+    public void testExceptionOnNegatives2() {
+        Exception exception = assertThrows(ArithmeticException.class, () -> calculator.add("-1,-2,-3"));
+        assertEquals("Negatives not allowed: -1, -2, -3", exception.getMessage());
     }
 
     @Test
-    public void testExceptionOnNegatives() {
-            calculator.add("-1,-2,-3");
+    public void testCustomDelimiter2() {
+        assertEquals(6, calculator.add("//#\n1#2#3"));
     }
+
 }

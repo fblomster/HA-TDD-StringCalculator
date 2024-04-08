@@ -18,7 +18,8 @@ public class StringCalculator {
             numbers = numbers.substring(delimiterIndex + 1);
         }
 
-        String[] nums = numbers.split("[,\n;]");
+        //String[] nums = numbers.split("[,\n;]");
+        String[] nums = numbers.split("[\n" + delimiter + "]");
         int sum = 0;
         List<String> negativeNumbers = new ArrayList<>();
         for (String num : nums) {
@@ -29,9 +30,9 @@ public class StringCalculator {
             sum += n;
         }
 
-        // Throw exception if negative numbers found
+        // exception om negativa siffror
         if (!negativeNumbers.isEmpty()) {
-            throw new IllegalArgumentException("Negatives not allowed: " + String.join(", ", negativeNumbers));
+            throw new ArithmeticException("Negatives not allowed: " + String.join(", ", negativeNumbers));
         }
         return sum;
         }
