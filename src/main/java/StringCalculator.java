@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
+    //adding a comment just to test Github Actions
 
     public int add(String numbers) {
         if (numbers.isEmpty()) {
