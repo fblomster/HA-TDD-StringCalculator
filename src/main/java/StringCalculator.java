@@ -2,10 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
-    //adding a comment just to test Github Actions
 
-    public int add(String numbers) {
-        if (numbers.isEmpty()) {
+    private final Logger logger;
+
+    public StringCalculator(){
+        logger = new LoggerStub();
+    }
+
+    public StringCalculator(Logger logger){
+        this.logger = logger;
+    }
+
+    public int add(String input) {
+        // TODO use your previous implementation, and include the tests too!
+
+        if (input.isEmpty()) {
             return 0;
         }
 
@@ -13,14 +24,20 @@ public class StringCalculator {
         String delimiter = ",";
 
         //checkar av vilken delimiter som kommer efter // och omvandlar till custom delimiter och splittar
-        if (numbers.startsWith("//")) {
-            int delimiterIndex = numbers.indexOf("\n");
-            delimiter = numbers.substring(2, delimiterIndex);
-            numbers = numbers.substring(delimiterIndex + 1);
+        /*if (input.startsWith("scalc ")) {
+            int delimiterIndex = input.indexOf("\n");
+            delimiter = input.substring(6, delimiterIndex);
+            input = input.substring(delimiterIndex + 1);
+        }*/
+        if (input.startsWith("//")) {
+            int delimiterIndex = input.indexOf("\n");
+            delimiter = input.substring(2, delimiterIndex);
+            input = input.substring(delimiterIndex + 1);
         }
 
-        //String[] nums = numbers.split("[,\n;]");
-        String[] nums = numbers.split("[\n" + delimiter + "]");
+
+        //String[] nums = input.split("[,\n;]");
+        String[] nums = input.split("[\n" + delimiter + "]");
         int sum = 0;
         List<String> negativeNumbers = new ArrayList<>();
         for (String num : nums) {
@@ -29,6 +46,10 @@ public class StringCalculator {
                 negativeNumbers.add(num);
             }
             sum += n;
+        }
+
+        if (sum > 1000) {
+            logger.log(sum);
         }
 
         // exception om negativa siffror

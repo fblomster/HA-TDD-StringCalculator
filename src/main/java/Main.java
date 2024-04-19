@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        StringCalculatorCLI stringCalculatorCLI = new StringCalculatorCLI(System.in, System.out);
+        stringCalculatorCLI.run();
+        /*Scanner scanner = new Scanner(System.in);
         var calculator = new StringCalculator();
 
         // Loop until the user inputs "exit"
@@ -21,6 +23,6 @@ public class Main {
         }
 
         scanner.close();
-        System.out.println("Exiting...");
+        System.out.println("Exiting...");*/
     }
 }
