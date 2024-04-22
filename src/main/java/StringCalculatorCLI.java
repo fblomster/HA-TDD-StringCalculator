@@ -26,7 +26,7 @@ public class StringCalculatorCLI {
         //TODO print welcome message
         out.println("Welcome to String Calculator!");
         out.println("To use the calculator, enter 'scalc' followed by a string expression.");
-        out.println("For example, type 'scalc 1,2,3' to calculate the sum of 1, 2, and 3.");
+        out.println("For example, type scalc '1,2,3' to calculate the sum of 1, 2, and 3.");
         out.println("Type 'exit' to quit the program.");
 
         StringCalculator calculator = new StringCalculator();
@@ -47,9 +47,9 @@ public class StringCalculatorCLI {
             // Process the input
             //TODO Handle "scalc"-formatted string
             // Check if the input starts with "scalc"
-            if (input.startsWith("scalc ")) {
+            if (input.startsWith("scalc '") && input.endsWith("'")) {
                 // Extract the expression from the input
-                input = input.substring(6); // Remove "scalc " from the beginning
+                input = input.substring(7, input.length() - 1);// Remove "scalc 1" och "'"
                 // Process the expression
                 var result = calculator.add(input);
                 // Print the result
