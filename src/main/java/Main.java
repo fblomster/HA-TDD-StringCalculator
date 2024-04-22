@@ -4,15 +4,13 @@ public class Main {
     public static void main(String[] args) {
         StringCalculatorCLI stringCalculatorCLI = new StringCalculatorCLI(System.in, System.out);
         stringCalculatorCLI.run();
-        /*Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         var calculator = new StringCalculator();
 
-        // Loop until the user inputs "exit"
         while (true) {
             System.out.print("? ");
-            String input = scanner.nextLine(); // Read the next line of input
+            String input = scanner.nextLine();
 
-            // Check if the user wants to exit
             if ("exit".equalsIgnoreCase(input)) {
                 break; // Exit the loop
             }
@@ -23,6 +21,6 @@ public class Main {
         }
 
         scanner.close();
-        System.out.println("Exiting...");*/
+        System.out.println("Exiting...");
     }
 }

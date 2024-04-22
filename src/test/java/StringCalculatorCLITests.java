@@ -33,44 +33,37 @@ public class StringCalculatorCLITests {
 
     }*/
 
-    /*@Test
-    public void testStringCalculatorCLIPrintsWelcomeText() {
-        // Förbered input och output streams
-        String input = "exit\n"; // Simulerar användarens input
-        String lineSeparator = System.lineSeparator(); // Hämta systemets radseparator
+    @Test
+    public void testPrintingWelcomeText() {
+        String input = "exit\n"; //
+        String lineSeparator = System.lineSeparator();
         String expectedOutput = "Welcome to String Calculator!" + lineSeparator +
                 "To use the calculator, enter 'scalc' followed by a string expression." + lineSeparator +
                 "For example, type 'scalc 1,2,3' to calculate the sum of 1, 2, and 3." + lineSeparator +
                 "Type 'exit' to quit the program." + lineSeparator +
-                "Exiting..." + lineSeparator; // Förväntad output
+                "Exiting..." + lineSeparator;
 
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
 
-        // Sparar den gamla System.in och System.out
         InputStream oldIn = System.in;
         PrintStream oldOut = System.out;
 
         try {
-            // Byt ut System.in och System.out med våra streams
             System.setIn(inputStream);
             System.setOut(printStream);
 
-            // Kör StringCalculatorCLI
             StringCalculatorCLI cli = new StringCalculatorCLI();
             cli.run();
 
-            // Hämta den faktiska outputen från outputStream
             String actualOutput = outputStream.toString();
 
-            // Jämför den faktiska outputen med den förväntade
             assertEquals(expectedOutput, actualOutput);
         } finally {
-            // Återställ System.in och System.out till de tidigare värdena
             System.setIn(oldIn);
             System.setOut(oldOut);
         }
-    }*/
+    }
 
 }

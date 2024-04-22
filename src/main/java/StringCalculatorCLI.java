@@ -35,14 +35,14 @@ public class StringCalculatorCLI {
             String input = scanner.nextLine(); // Read the next line of input
 
             // Check if the user wants to exit
-            /*if ("exit".equalsIgnoreCase(input)) {
+            if ("exit".equalsIgnoreCase(input)) {
                 break; // Exit the loop
-            }*/
+            }
 
             // Avsluta loopen om input är tom
-            if (input.isEmpty()) {
+            /*if (input.isEmpty()) {
                 break;
-            }
+            }*/
 
             // Process the input
             //TODO Handle "scalc"-formatted string
