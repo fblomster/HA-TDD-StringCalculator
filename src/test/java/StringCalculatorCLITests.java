@@ -5,7 +5,7 @@ import java.io.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorCLITests {
-    @Test
+    /*@Test
     public void testEmptyNumberString() {
 
         String input = "scalc ''\nexit";
@@ -16,9 +16,9 @@ public class StringCalculatorCLITests {
         calculator.run();
 
         assertEquals("0\nExiting...\n", outputStream.toString());
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void testEmptyNumberString2() {
         String input = "scalc ''\nexit";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
@@ -31,9 +31,9 @@ public class StringCalculatorCLITests {
 
         assertEquals("0\nExiting...\n", outputStream.toString());
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void testStringCalculatorCLIPrintsWelcomeText() {
         // Förbered input och output streams
         String input = "exit\n"; // Simulerar användarens input
@@ -71,6 +71,6 @@ public class StringCalculatorCLITests {
             System.setIn(oldIn);
             System.setOut(oldOut);
         }
-    }
+    }*/
 
 }

@@ -60,5 +60,13 @@ public class StringCalculatorTest {
         assertEquals(6, calculator.add("//#\n1#2#3"));
     }
 
+    /*@Test
+    public void testScalcInput() {
+        assertEquals(6, calculator.add("scalc '1,2,3'"));
+    }*/
 
+    /*@Test
+    public void testDelimiters() {
+        assertEquals(7, calculator.add("scalc '//[***][%%%]\n1***2%%%4''"));
+    }*/
 }
