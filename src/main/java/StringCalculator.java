@@ -47,8 +47,31 @@ public class StringCalculator {
                     throw new ArithmeticException("Negatives not allowed: " + String.join(", ", negativeNumbers));
                 }
                 return sum;
+            } else if (input.startsWith("//")) {
+                int delimiterIndex = input.indexOf("\n");
+                delimiter = input.substring(2, delimiterIndex);
+                input = input.substring(delimiterIndex + 1);
+                String[] nums = input.split("[\n" + delimiter + "]");
+                int sum = 0;
+                List<String> negativeNumbers = new ArrayList<>();
+                for (String num : nums) {
+                    int n = toInt(num);
+                    if (n < 0) {
+                        negativeNumbers.add(num);
+                    }
+                    sum += n;
+                }
+
+                if (sum > 1000) {
+                    logger.log(sum);
+                }
+
+                // Throw exception for negative numbers
+                if (!negativeNumbers.isEmpty()) {
+                    throw new ArithmeticException("Negatives not allowed: " + String.join(", ", negativeNumbers));
+                }
+                return sum;
             } else {
-                // Regular input processing
                 String[] nums = input.split("[\n" + delimiter + "]");
 
                 int sum = 0;
