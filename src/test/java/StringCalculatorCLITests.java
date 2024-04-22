@@ -6,6 +6,7 @@ import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorCLITests {
+    String lineSeparator = System.lineSeparator();
     @Test
     public void testSumOfNumbers() {
 
@@ -18,10 +19,11 @@ public class StringCalculatorCLITests {
         StringCalculatorCLI calculator = new StringCalculatorCLI(inputStream, outputStream);
         calculator.run();
 
-        assertEquals("Welcome to String Calculator!\n" +
-                "To use the calculator, enter 'scalc' followed by a string expression.\n" +
-                "For example, type scalc '1,2,3' to calculate the sum of 1, 2, and 3.\n" +
-                "Type 'exit' to quit the program.\nThe result is 6\nExiting...\n", outputStream.toString());
+        assertEquals("Welcome to String Calculator!" + lineSeparator +
+                "To use the calculator, enter 'scalc' followed by a string expression." + lineSeparator +
+                "For example, type scalc '1,2,3' to calculate the sum of 1, 2, and 3." + lineSeparator +
+                "Type 'exit' to quit the program." + lineSeparator +
+                "The result is 6" + lineSeparator + "Exiting..." + lineSeparator, outputStream.toString());
     }
 
    /* @Test
@@ -42,7 +44,6 @@ public class StringCalculatorCLITests {
     @Test
     public void testPrintingWelcomeText() {
         String input = "exit\n"; //
-        String lineSeparator = System.lineSeparator();
         String expectedOutput = "Welcome to String Calculator!" + lineSeparator +
                 "To use the calculator, enter 'scalc' followed by a string expression." + lineSeparator +
                 "For example, type scalc '1,2,3' to calculate the sum of 1, 2, and 3." + lineSeparator +
