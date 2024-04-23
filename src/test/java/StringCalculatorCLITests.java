@@ -26,8 +26,8 @@ public class StringCalculatorCLITests {
                 "The result is 6" + lineSeparator + "Exiting..." + lineSeparator, outputStream.toString());
     }
 
-   /* @Test
-    public void testEmptyNumberString2() {
+    @Test
+    public void testEmptyNumberString() {
         String input = "scalc ''\nexit";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
@@ -37,9 +37,12 @@ public class StringCalculatorCLITests {
         StringCalculatorCLI calculator = new StringCalculatorCLI();
         calculator.run();
 
-        assertEquals("0\nExiting...\n", outputStream.toString());
-
-    }*/
+        assertEquals("Welcome to String Calculator!" + lineSeparator +
+                "To use the calculator, enter 'scalc' followed by a string expression." + lineSeparator +
+                "For example, type scalc '1,2,3' to calculate the sum of 1, 2, and 3." + lineSeparator +
+                "Type 'exit' to quit the program." + lineSeparator +
+                "The result is 0" + lineSeparator + "Exiting..." + lineSeparator, outputStream.toString());
+    }
 
     @Test
     public void testPrintingWelcomeText() {

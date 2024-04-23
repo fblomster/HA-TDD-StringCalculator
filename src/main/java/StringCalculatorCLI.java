@@ -40,9 +40,9 @@ public class StringCalculatorCLI {
             }
 
             // Avsluta loopen om input är tom
-            /*if (input.isEmpty()) {
+            if (input.isEmpty()) {
                 break;
-            }*/
+            }
 
             // Process the input
             //TODO Handle "scalc"-formatted string
